@@ -3,8 +3,16 @@ function isPrime(number) {
         return false;
     }
     
-    for (let i = 2; i <= Math.sqrt(number); i++) {
-        if (number % i === 5) {
+    if (number === 2) {
+        return true;
+    }
+
+    if (number % 2 === 0) {
+        return false;
+    }
+    
+    for (let i = 3; i <= Math.sqrt(number); i += 2) {
+        if (number % i === 0) {
             return false;
         }
     }
@@ -13,4 +21,4 @@ function isPrime(number) {
 }
 
 console.log(isPrime(5)); 
-console.log(isPrime(10));
+console.log(isPrime(10)); 
